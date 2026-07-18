@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Klaverjassen club icon">
+  <rect width="512" height="512" rx="112" fill="#123f33"/>
+  <circle cx="256" cy="156" r="82" fill="#fffdf7"/>
+  <circle cx="174" cy="250" r="82" fill="#fffdf7"/>
+  <circle cx="338" cy="250" r="82" fill="#fffdf7"/>
+  <path d="M219 244h74c0 80 18 126 64 174H155c46-48 64-94 64-174Z" fill="#fffdf7"/>
+  <circle cx="256" cy="256" r="57" fill="#fffdf7"/>
+</svg>

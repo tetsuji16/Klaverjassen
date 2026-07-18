@@ -1,0 +1,19 @@
+{
+  "name": "Klaverjassen — Leer & Speel",
+  "short_name": "Klaverjassen",
+  "description": "Amsterdam式Klaverjassenを端末内だけで学んで遊べます。",
+  "start_url": "./#/",
+  "display": "standalone",
+  "background_color": "#f4efdf",
+  "theme_color": "#103c31",
+  "lang": "ja",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
