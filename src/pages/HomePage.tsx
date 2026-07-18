@@ -34,7 +34,7 @@ export default function HomePage({ savedMatch, progress, onResume }: { savedMatc
       <section className="mode-grid" aria-label="ゲームモード">
         <Link to="/tutorial" className="mode-card featured">
           <span className="mode-number">01</span><span className="mode-icon">◎</span>
-          <h2>学ぶ</h2><p>11の短いレッスンと実技で、迷いやすい切り札ルールまで。</p>
+          <h2>学ぶ</h2><p>14の短いレッスンと実技で、迷いやすい切り札ルールから得点戦略まで。</p>
           <div className="progress-line"><i style={{ width: `${(learned / lessons.length) * 100}%` }} /><span>{learned}/{lessons.length}</span></div>
         </Link>
         <Link to="/cpu" className="mode-card">
