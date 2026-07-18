@@ -30,6 +30,11 @@ export default function App() {
   const updateProgress = (next: TutorialProgress) => { setProgress(next); saveTutorialProgress(next); };
   const startCpu = (difficulty: Difficulty, length: MatchLength) => updateMatch(createMatch({ mode: "cpu", difficulty, matchLength: length, names: { south: settings.playerName } }));
   const startPass = (names: Record<Seat, string>, length: MatchLength) => updateMatch(createMatch({ mode: "pass-and-play", matchLength: length, names }));
+  const rematch = () => {
+    if (!match) return;
+    const names = Object.fromEntries(Object.entries(match.players).map(([seat, player]) => [seat, player.name])) as Record<Seat, string>;
+    updateMatch(createMatch({ mode: match.mode, difficulty: match.difficulty, matchLength: match.matchLength, names }));
+  };
   const finishMatch = () => { clearMatch(); setMatch(null); navigate("/"); };
 
   return <Layout><Routes>
@@ -37,7 +42,7 @@ export default function App() {
     <Route path="/tutorial" element={<TutorialPage progress={progress} onProgress={updateProgress} />} />
     <Route path="/cpu" element={<CpuSetup settings={settings} onStart={startCpu} />} />
     <Route path="/pass-play" element={<PassPlaySetup onStart={startPass} />} />
-    <Route path="/game" element={<GamePage match={match} settings={settings} onUpdate={updateMatch} onQuit={finishMatch} />} />
+    <Route path="/game" element={<GamePage match={match} settings={settings} onUpdate={updateMatch} onRematch={rematch} onQuit={finishMatch} />} />
     <Route path="/rules" element={<RulesPage />} />
     <Route path="/settings" element={<SettingsPage settings={settings} onChange={setSettings} />} />
     <Route path="*" element={<Navigate to="/" replace />} />
